@@ -8,29 +8,29 @@ pre: " <b> 1.9. </b> "
 
 ### 1. Mục tiêu
 
-* **Migration AWS:** Chuyển GuardScript từ prototype local (Express.js + SQLite) sang kiến trúc serverless trên AWS.
-* **Infrastructure as Code:** Thiết lập SAM/CloudFormation template cho Lambda, DynamoDB, S3 và CloudFront.
-* **Cải thiện UI tổng thể:** Nâng cấp visual design, sửa lỗi theme, hoàn thiện các tính năng frontend còn thiếu.
+* **Migration AWS:** Nhóm chuyển GuardScript từ prototype local lên AWS.
+* **Hạ tầng (Nhóm):** Thiết lập các dịch vụ AWS (Lambda, DynamoDB, S3, CloudFront).
+* **Cải thiện UI tổng thể:** Nâng cấp giao diện, sửa lỗi theme, hoàn thiện các tính năng frontend còn thiếu.
 
 ### 2. Chi tiết công việc trong tuần
 
 | Thứ | Công việc chính | Chi tiết | Trạng thái |
 |:---:|:---|:---|:---:|
-| **Hai** | **Lập kế hoạch migration** | - Rà soát prototype local, xác định dịch vụ AWS cần dùng: Lambda, DynamoDB, S3, CloudFront.<br>- Phân chia công việc migration cho các thành viên. | Hoàn thành |
-| **Ba** | **SAM Template & UI Enhancement** | - Đóng góp vào SAM template (Lambda, S3 buckets, CloudFront, DynamoDB tables).<br>- Cải thiện UI tổng thể: spacing, colors, logo, shield icons.<br>- Sửa lỗi light theme — nhiều component hiển thị sai trong chế độ sáng. | Hoàn thành |
-| **Tư** | **Workspace & License Features** | - Thêm toggle option cho workspace.<br>- Sửa lỗi license key status update và workspace creation flow.<br>- Sửa execution summary hiển thị. | Hoàn thành |
+| **Hai** | **Lập kế hoạch migration** | - Rà soát prototype, xác định các dịch vụ AWS cần dùng.<br>- Phân chia công việc migration cho các thành viên. | Hoàn thành |
+| **Ba** | **Hạ tầng (Nhóm) & UI** | - Nhóm triển khai hạ tầng AWS (Lambda, S3, CloudFront, DynamoDB).<br>- Cải thiện UI: spacing, colors, logo, shield icons.<br>- Sửa lỗi light theme — nhiều component hiển thị sai trong chế độ sáng. | Hoàn thành |
+| **Tư** | **Workspace & License** | - Thêm toggle option cho workspace.<br>- Sửa lỗi cập nhật trạng thái license key và luồng tạo workspace.<br>- Sửa hiển thị execution summary. | Hoàn thành |
 | **Năm** | **Auth Pages & Landing** | - Sửa layout trang đăng nhập/đăng ký cho responsive tốt hơn.<br>- Thêm hiệu ứng blur cho landing page. | Hoàn thành |
 | **Sáu** | **Sidebar Fix & PR Review** | - Sửa toggle sidebar trong workspace.<br>- Review và merge PR#14 → PR#21 (enhance_UI, License_status, workspace_Overview, login_register). | Hoàn thành |
 
 ### 3. Kết quả đạt được
 
 #### Hạ tầng (Đóng góp nhóm):
-* **SAM Template:** CloudFormation template định nghĩa tất cả tài nguyên AWS (Lambda, S3, CloudFront, 12 DynamoDB tables với GSIs, CloudWatch alarms).
-* **DynamoDB Migration:** Data layer chuyển từ SQLite sang DynamoDB.
+* Triển khai các dịch vụ AWS: Lambda, S3, CloudFront, DynamoDB.
+* Chuyển dữ liệu từ SQLite sang DynamoDB.
 
 #### Frontend (Đóng góp cá nhân):
 * Nâng cấp UI: spacing, typography, bảng màu, logo mới.
-* Hoàn thiện dark/light theme toggle, lưu preference qua localStorage.
+* Hoàn thiện dark/light theme toggle.
 * Sửa workspace toggle, license status, execution summary, auth pages layout.
 * Thêm blur effect cho landing page.
 * Merge 8 PRs (PR#14 → PR#21).
