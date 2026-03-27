@@ -8,11 +8,11 @@ chapter: false
 # Internship Report - First Cloud AI Journey
 
 ### 1. Student Information
-&emsp; **Full Name:** Vo Tan Phat
+&emsp; **Full Name:** Bui Minh Hien
 
-&emsp; **Role:** Team Lead - AI Engineer
+&emsp; **Role:** Cyber Security
 
-&emsp; **Email:** votanphata2.c3hn2022@gmail.com
+&emsp; **Email:** buiminhhien001@gmail.com
 
 &emsp; **University:** FPT University
 
@@ -20,7 +20,7 @@ chapter: false
 
 &emsp; **Team:** **TheBois**
 
-&emsp; **Internship Period:** From 05/012026
+&emsp; **Internship Period:** From 05/01/2026
 
 ![Avatar](/images/avatar.png)
 

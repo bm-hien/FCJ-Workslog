@@ -4,8 +4,8 @@ This repository serves as the official documentation and weekly worklog for my i
 
 ## Author Information
 
-* **Name:** Vo Tan Phat
-* **Role:** AI Team Lead
+* **Name:** Bui Minh Hien
+* **Role:** Cyber Security
 * **Team:** TheBois
 * **Program:** First Cloud AI Journey 2026
 

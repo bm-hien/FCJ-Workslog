@@ -15,15 +15,15 @@ home = [ "HTML", "RSS", "JSON"]
   themeVariant = "workshop"
   # Git hub repo link
   editURL = "https://github.com/bm-hien/FCJ-Workslog"
-  description = "Official Internship Report of Vo Tan Phat - AI Team Lead (TheBois) at First Cloud AI Journey 2026."
-  author = "votanphata2.c3hn2022@gmail.com"
+  description = "Official Internship Report of Bui Minh Hien at First Cloud AI Journey 2026."
+  author = "buiminhhien001@gmail.com"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
   
 [Languages]
 [Languages.en]
-title = "Internship Report - VoTanPhat - TheBois"
+title = "Internship Report - Bui Minh Hien - TheBois"
 weight = 1
 languageName = "English"
 
