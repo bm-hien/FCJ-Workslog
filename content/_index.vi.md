@@ -8,11 +8,11 @@ chapter: false
 # Báo cáo thực tập - First Cloud AI Journey
 
 ### 1. Thông tin sinh viên
-&emsp; **Họ và tên:** Võ Tấn Phát
+&emsp; **Họ và tên:** Bùi Minh Hiển
 
-&emsp; **Vai trò (Role):** Team Lead - AI Engineer
+&emsp; **Vai trò (Role):** Information Assurance
 
-&emsp; **Email:** votanphata2.c3hn2022@gmail.com
+&emsp; **Email:** buiminhhien001@gmail.com
 
 &emsp; **Trường:** Đại học FPT
 
@@ -22,7 +22,7 @@ chapter: false
 
 &emsp; **Thời gian thực tập:** Từ ngày 05/01/2026
 
-![Ảnh đại diện](/images/avatar.jpg)
+![Ảnh đại diện](/images/avatar.png)
 
 ---
 

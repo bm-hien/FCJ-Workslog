@@ -159,8 +159,8 @@ The platform uses a fully serverless AWS architecture. All compute, storage, and
 
 ### 11. Personal Contribution Context
 
-As a team leader, my primary contributions to this project are:
+My primary contributions to this project focus on ideation and security development:
 
-- **Frontend website design and implementation:** Designed and built all frontend pages (landing, login, register, dashboard, workspace IDE) with responsive layouts, theme switching, and interactive components.
-- **Team coordination and progress tracking:** Managed task distribution across Team TheBois, conducted weekly syncs, tracked milestones, and ensured alignment between frontend and backend development.
-- **Limited technical support:** Assisted with basic infrastructure tasks (S3 configuration, CloudFront setup, SAM template review) but did not own the backend security architecture or cryptographic implementation, which were handled by other team members with deeper security expertise.
+- **Idea contribution and solution shaping:** Proposed and refined core product ideas, helping define the GuardScript scope, security direction, and practical implementation priorities.
+- **Security construction and hardening:** Participated in designing and building security-related components, including protection mechanisms, secure access flow, and safeguards to reduce unauthorized script usage and redistribution risks.
+- **Security review collaboration:** Contributed feedback on security risks and mitigation approaches, and worked with teammates to align security practices across the system.

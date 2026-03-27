@@ -22,7 +22,7 @@ chapter: false
 
 &emsp; **Internship Period:** From 05/012026
 
-![Avatar](/images/avatar.jpg)
+![Avatar](/images/avatar.png)
 
 ---
 
