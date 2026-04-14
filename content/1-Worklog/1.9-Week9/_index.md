@@ -1,5 +1,5 @@
 ---
-title: "Week 9: GuardScript — AWS Migration & Comprehensive UI Improvements"
+title: "Week 9: GuardScript - Backend Migration to AWS"
 date: 2026-03-16
 weight: 9
 chapter: false
@@ -8,38 +8,32 @@ pre: " <b> 1.9. </b> "
 
 ### 1. Objectives
 
-* **AWS Migration:** Team migrates GuardScript from local prototype to AWS.
-* **Infrastructure (Team):** Set up AWS services (Lambda, DynamoDB, S3, CloudFront).
-* **Comprehensive UI Improvements:** Upgrade visual design, fix theme system, and complete missing frontend features.
+* Move GuardScript from the local prototype to an AWS serverless architecture.
+* Redesign the backend data and infrastructure layers to fit Lambda, DynamoDB, and S3.
+* Stabilize the main business flows after migration.
 
 ### 2. Weekly Tasks Breakdown
 
 | Day | Main Task | Details | Status |
 |:---:|:---|:---|:---:|
-| **Mon** | **Migration Planning** | - Reviewed prototype, identified AWS services needed.<br>- Distributed migration tasks among team members. | Completed |
-| **Tue** | **Infrastructure (Team) & UI** | - Team deployed AWS infrastructure (Lambda, S3, CloudFront, DynamoDB).<br>- Enhanced overall UI: spacing, colors, logos, shield icons.<br>- Fixed light theme — multiple components displayed incorrectly in light mode. | Completed |
-| **Wed** | **Workspace & License** | - Added toggle option for workspace.<br>- Fixed license key status update and workspace creation flow.<br>- Fixed execution summary display. | Completed |
-| **Thu** | **Auth Pages & Landing** | - Fixed login/register page layouts for better responsive behavior.<br>- Added blur effect to landing page. | Completed |
-| **Fri** | **Sidebar Fix & PR Review** | - Fixed toggle sidebar in workspace.<br>- Reviewed and merged PR#14 → PR#21 (enhance_UI, License_status, workspace_Overview, login_register). | Completed |
+| **Mon** | **Migration Planning** | - Reviewed the old prototype and identified the parts that needed migration.<br>- Clarified changes across runtime, database, storage, and deployment flow. | Completed |
+| **Tue** | **Lambda Backend Restructure** | - Reorganized the backend into a Lambda-based modular monolith.<br>- Centralized routing and kept controllers separated by domain for AWS deployment. | Completed |
+| **Wed** | **DynamoDB Data Redesign** | - Designed the multi-table model and GSIs for users, workspaces, projects, licenses, invitations, and logs.<br>- Standardized data access paths for the API layer. | Completed |
+| **Thu** | **S3 Storage Migration** | - Shifted file and script storage to S3 using content references.<br>- Reduced dependency on the local prototype storage pattern. | Completed |
+| **Fri** | **AWS Infrastructure Setup** | - Used SAM/CloudFormation to deploy Lambda, S3, CloudFront, DynamoDB, and WebSocket API.<br>- Adjusted backend flows so frontend integration could continue after migration. | Completed |
 
-### 3. Key Results
+### 3. Outcomes
 
-#### Infrastructure (Team Effort):
-* Deployed AWS services: Lambda, S3, CloudFront, DynamoDB.
-* Migrated data from SQLite to DynamoDB.
-
-#### Frontend (Personal Contribution):
-* UI upgrade: spacing, typography, color palette, new logos.
-* Finalized dark/light theme toggle.
-* Fixed workspace toggle, license status, execution summary, auth page layouts.
-* Added blur effect to landing page.
-* Merged 8 PRs (PR#14 → PR#21).
+* The backend moved toward a clearer AWS-centric architecture.
+* The migration path from local prototype storage to DynamoDB and S3 became technically grounded.
+* Infrastructure-as-code now reflected the main deployment components of the system.
 
 ### 4. Issues & Solutions
-* **Issue:** Light theme caused display issues since components were initially designed only for dark theme.
-* **Solution:** Audited all CSS, replaced hardcoded colors with CSS custom properties.
+
+* **Issue:** Migration required changing runtime model, persistence strategy, and data access patterns at the same time.
+* **Solution:** Preserved a reasonable API surface while replacing the storage and deployment layers underneath.
 
 ### 5. Next Steps
-* Conduct end-to-end integration testing.
-* Complete the system architecture diagram.
-* Prepare documentation and worklog reports.
+
+* Run end-to-end integration checks between frontend and backend on AWS.
+* Continue stabilizing APIs and resolving migration-related issues.

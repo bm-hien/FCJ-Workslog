@@ -1,5 +1,5 @@
 ---
-title: "Tuần 9: GuardScript — Migration lên AWS & Cải thiện UI tổng thể"
+title: "Tuần 9: GuardScript - Migration backend lên AWS"
 date: 2026-03-16
 weight: 9
 chapter: false
@@ -8,40 +8,32 @@ pre: " <b> 1.9. </b> "
 
 ### 1. Mục tiêu
 
-* **Migration AWS:** Nhóm chuyển GuardScript từ prototype local lên AWS.
-* **Hạ tầng (Nhóm):** Thiết lập các dịch vụ AWS (Lambda, DynamoDB, S3, CloudFront).
-* **Cải thiện UI tổng thể:** Nâng cấp giao diện, sửa lỗi theme, hoàn thiện các tính năng frontend còn thiếu.
+* Chuyển GuardScript từ prototype local sang kiến trúc AWS serverless.
+* Thiết kế lại lớp dữ liệu và hạ tầng backend để phù hợp với Lambda, DynamoDB và S3.
+* Ổn định các luồng nghiệp vụ chính sau migration.
 
 ### 2. Chi tiết công việc trong tuần
 
 | Thứ | Công việc chính | Chi tiết | Trạng thái |
 |:---:|:---|:---|:---:|
-| **Hai** | **Lập kế hoạch migration** | - Rà soát prototype, xác định các dịch vụ AWS cần dùng.<br>- Phân chia công việc migration cho các thành viên. | Hoàn thành |
-| **Ba** | **Hạ tầng (Nhóm) & UI** | - Nhóm triển khai hạ tầng AWS (Lambda, S3, CloudFront, DynamoDB).<br>- Cải thiện UI: spacing, colors, logo, shield icons.<br>- Sửa lỗi light theme — nhiều component hiển thị sai trong chế độ sáng. | Hoàn thành |
-| **Tư** | **Workspace & License** | - Thêm toggle option cho workspace.<br>- Sửa lỗi cập nhật trạng thái license key và luồng tạo workspace.<br>- Sửa hiển thị execution summary. | Hoàn thành |
-| **Năm** | **Auth Pages & Landing** | - Sửa layout trang đăng nhập/đăng ký cho responsive tốt hơn.<br>- Thêm hiệu ứng blur cho landing page. | Hoàn thành |
-| **Sáu** | **Sidebar Fix & PR Review** | - Sửa toggle sidebar trong workspace.<br>- Review và merge PR#14 → PR#21 (enhance_UI, License_status, workspace_Overview, login_register). | Hoàn thành |
+| **Hai** | **Lập kế hoạch migration** | - Rà soát prototype cũ và xác định các thành phần cần migrate.<br>- Làm rõ thay đổi về runtime, database, storage và deployment flow. | Hoàn thành |
+| **Ba** | **Tái cấu trúc backend trên Lambda** | - Tổ chức backend theo mô hình Lambda modular monolith.<br>- Gom router và tách controller theo domain để phù hợp môi trường AWS. | Hoàn thành |
+| **Tư** | **Thiết kế lại dữ liệu DynamoDB** | - Thiết kế multi-table và GSI cho các query chính như users, workspaces, projects, licenses, invitations và logs.<br>- Chuẩn hóa hướng truy xuất dữ liệu phục vụ API. | Hoàn thành |
+| **Năm** | **Chuyển storage sang S3** | - Chuyển luồng lưu trữ file/script sang S3 với content reference.<br>- Giảm phụ thuộc vào cách lưu dữ liệu của prototype local trước đó. | Hoàn thành |
+| **Sáu** | **Xây dựng hạ tầng AWS** | - Dùng SAM/CloudFormation để triển khai Lambda, S3, CloudFront, DynamoDB và WebSocket API.<br>- Điều chỉnh các flow backend để frontend vẫn tiếp tục tích hợp được sau migration. | Hoàn thành |
 
 ### 3. Kết quả đạt được
 
-#### Hạ tầng (Đóng góp nhóm):
-* Triển khai các dịch vụ AWS: Lambda, S3, CloudFront, DynamoDB.
-* Chuyển dữ liệu từ SQLite sang DynamoDB.
-
-#### Frontend (Đóng góp cá nhân):
-* Nâng cấp UI: spacing, typography, bảng màu, logo mới.
-* Hoàn thiện dark/light theme toggle.
-* Sửa workspace toggle, license status, execution summary, auth pages layout.
-* Thêm blur effect cho landing page.
-* Merge 8 PRs (PR#14 → PR#21).
+* Backend đã được đưa về kiến trúc AWS-centric rõ ràng hơn.
+* Luồng dữ liệu từ local prototype sang DynamoDB/S3 có cơ sở triển khai thực tế.
+* Hạ tầng triển khai đã có template IaC đủ phản ánh các thành phần chính của hệ thống.
 
 ### 4. Vấn đề & Giải pháp
-* **Vấn đề:** Light theme gây nhiều lỗi hiển thị do component chỉ thiết kế cho dark theme.
-* **Giải pháp:** Rà soát CSS, thay hardcode màu bằng CSS custom properties.
+
+* **Vấn đề:** Migration đòi hỏi chuyển đổi đồng thời mô hình runtime, storage và cách truy xuất dữ liệu.
+* **Giải pháp:** Giữ API surface ở mức hợp lý trong khi thay lớp persistence và deployment phía dưới.
 
 ### 5. Bước tiếp theo
-* Kiểm thử tích hợp end-to-end.
-* Hoàn thiện sơ đồ kiến trúc.
-* Chuẩn bị tài liệu báo cáo.
 
-
+* Kiểm thử tích hợp end-to-end giữa frontend và backend trên AWS.
+* Tiếp tục ổn định các API và xử lý các lỗi phát sinh sau migration.

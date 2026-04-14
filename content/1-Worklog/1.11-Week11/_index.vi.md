@@ -1,59 +1,39 @@
 ---
-title: "Worklog Tuần 11"
+title: "Tuần 11: GuardScript - Hardening bảo mật và kiểm soát truy cập"
 date: 2026-03-20
 weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+### 1. Mục tiêu
 
-### Mục tiêu tuần 11:
+* Rà soát và tăng cường các cơ chế bảo mật trọng yếu của backend GuardScript.
+* Chuẩn hóa luồng kiểm soát truy cập theo workspace, project và license.
+* Tăng khả năng quan sát hệ thống thông qua logging, audit và realtime events.
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+### 2. Chi tiết công việc trong tuần
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc chính | Chi tiết kỹ thuật | Trạng thái |
+|:---:|:---|:---|:---:|
+| **Hai** | **Rà soát Loader v2** | - Kiểm tra request signature, timestamp/nonce validation.<br>- Rà lại response signature trong execute flow. | Hoàn thành |
+| **Ba** | **Rà soát Loader v3** | - Kiểm tra handshake X25519 và AES-GCM.<br>- Đối chiếu luồng bảo mật loader với implementation hiện tại. | Hoàn thành |
+| **Tư** | **Hardening Auth và License** | - Rà auth utility, PBKDF2 password hashing, password rotation, rate limiting.<br>- Chuẩn hóa điều kiện license active/inactive, expiration, project binding, HWID lock/reset. | Hoàn thành |
+| **Năm** | **Access Control** | - Hoàn thiện access list theo workspace.<br>- Kiểm tra whitelist/blacklist và giới hạn truy cập theo IP. | Hoàn thành |
+| **Sáu** | **Logging, Audit và Realtime** | - Rà log theo workspace, admin audit và realtime broadcasts.<br>- Kiểm tra các channel workspace/user/admin trong luồng sự kiện. | Hoàn thành |
 
+### 3. Kết quả đạt được
 
-### Kết quả đạt được tuần 11:
+* Các cơ chế bảo vệ script và xác thực request đã bám sát mô hình bảo mật hiện có trong codebase.
+* Luồng license/HWID/access control hoạt động nhất quán hơn với execution flow của loader.
+* Hệ thống có khả năng quan sát tốt hơn thông qua logs, audit trail và realtime events.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### 4. Vấn đề & Giải pháp
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* **Vấn đề:** Giai đoạn hardening yêu cầu cân bằng giữa mức độ bảo mật và tính tương thích với luồng sử dụng hiện tại.
+* **Giải pháp:** Giữ nguyên API surface nhưng siết chặt phần validation, signature, permission check và log sự kiện.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+### 5. Bước tiếp theo
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thiện tài liệu kỹ thuật để phản ánh đúng implementation.
+* Chuẩn bị checklist kiểm thử, deploy và demo dự án.

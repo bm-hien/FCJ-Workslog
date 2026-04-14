@@ -1,5 +1,5 @@
 ---
-title: "Tuần 10: GuardScript — Hoàn thiện Frontend, Kiểm thử & Tài liệu"
+title: "Tuần 10: GuardScript - Tích hợp hệ thống, kiểm thử và ổn định backend"
 date: 2026-03-23
 weight: 10
 chapter: false
@@ -8,41 +8,32 @@ pre: " <b> 1.10. </b> "
 
 ### 1. Mục tiêu
 
-* **Hoàn thiện Frontend:** Hoàn thiện trang dashboard và workspace với đầy đủ tính năng.
-* **Responsive & Theme:** Đảm bảo tất cả trang hoạt động tốt trên mọi thiết bị với dark/light theme.
-* **Kiểm thử:** Kiểm tra tổng thể dự án, đảm bảo các chức năng hoạt động đúng.
-* **Tài liệu:** Hoàn thiện sơ đồ kiến trúc và tài liệu dự án.
+* Ổn định backend sau giai đoạn migration lên AWS.
+* Kiểm thử luồng tích hợp end-to-end giữa frontend và backend.
+* Chuẩn hóa thêm các API, response và cấu hình triển khai để giảm lỗi khi demo.
 
 ### 2. Chi tiết công việc trong tuần
 
 | Thứ | Công việc chính | Chi tiết | Trạng thái |
 |:---:|:---|:---|:---:|
-| **Hai** | **Hoàn thiện Dashboard & Workspace** | - Hoàn thiện dashboard: sidebar, stats cards, workspace grid, quick-action buttons.<br>- Hoàn thiện workspace: layout 3 panel, tab bar, file tree component. | Hoàn thành |
-| **Ba** | **Theme & Responsive** | - Kiểm tra dark/light theme trên tất cả các trang.<br>- Kiểm tra responsive trên mobile, tablet, desktop. | Hoàn thành |
-| **Tư** | **Kiểm thử tổng thể** | - Kiểm tra luồng chính: đăng ký → đăng nhập → tạo workspace → sử dụng các chức năng.<br>- Hỗ trợ nhóm xử lý các lỗi phát sinh khi kết nối frontend với backend. | Hoàn thành |
-| **Năm** | **Sơ đồ kiến trúc & Tài liệu** | - Hoàn thiện sơ đồ kiến trúc hệ thống GuardScript.<br>- Cập nhật README và tài liệu dự án. | Đang thực hiện |
-| **Sáu** | **Tổng kết & Rà soát** | - Rà soát giao diện lần cuối, sửa bug nhỏ còn sót.<br>- Họp team review deliverables, cập nhật worklog. | Dự kiến |
+| **Hai** | **Kiểm thử luồng chính** | - Kiểm tra luồng đăng ký, đăng nhập, tạo workspace, tạo project, thao tác file và license.<br>- Ghi nhận các điểm phát sinh lỗi sau migration. | Hoàn thành |
+| **Ba** | **Rà soát API tích hợp** | - Rà lại các API như workspace details, project listing, execution summary và user stats.<br>- Điều chỉnh response cho phù hợp với frontend sau khi chạy trên AWS. | Hoàn thành |
+| **Tư** | **Xử lý lỗi integration** | - Phối hợp xử lý các lỗi frontend-backend trên AWS.<br>- Kiểm tra routing, CORS, headers và dữ liệu trả về. | Hoàn thành |
+| **Năm** | **Rà deployment flow** | - Kiểm tra Lambda Function URL, CloudFront rewrite behavior, S3 frontend hosting và backend environment variables.<br>- Đảm bảo flow triển khai khớp với hệ thống thực tế. | Hoàn thành |
+| **Sáu** | **Cập nhật tài liệu kỹ thuật** | - Hỗ trợ cập nhật README và mô tả kiến trúc.<br>- Đồng bộ mô tả hệ thống với trạng thái backend đã triển khai. | Hoàn thành |
 
-### 3. Kết quả đạt được (Tính đến hiện tại)
+### 3. Kết quả đạt được
 
-#### Frontend:
-* **Dashboard:** Sidebar, stats cards, workspace grid, settings panel, dark/light theme toggle.
-* **Workspace:** Layout 3 panel với file explorer, tab bar, project settings, team management.
-* **Responsive:** Tất cả trang tương thích mobile, tablet, desktop.
-
-#### Kiểm thử:
-* Kiểm tra luồng chính thành công. Hỗ trợ sửa các lỗi kết nối giữa frontend và backend.
-
-#### Hạ tầng (Nhóm):
-* Các dịch vụ AWS đã deploy và hoạt động.
+* Backend sau migration đã ổn định hơn ở mức tích hợp hệ thống.
+* Các API chính phục vụ dashboard/workspace có thể đáp ứng tốt hơn cho frontend.
+* Quy trình triển khai và kiểm thử end-to-end được làm rõ hơn trước giai đoạn hardening và hoàn thiện tài liệu.
 
 ### 4. Vấn đề & Giải pháp
-* **Vấn đề:** Một số lỗi hiển thị khi kết nối frontend với API trên AWS.
-* **Giải pháp:** Phối hợp với nhóm để sửa cấu hình và đảm bảo tương thích.
+
+* **Vấn đề:** Một số lỗi chỉ xuất hiện khi chạy môi trường AWS thật, không lộ rõ ở local prototype.
+* **Giải pháp:** Kiểm tra lại toàn bộ flow request/response, header và cấu hình rewrite giữa frontend và backend.
 
 ### 5. Bước tiếp theo
-* Hoàn thiện sơ đồ kiến trúc và tài liệu.
-* Chuẩn bị demo dự án.
-* Hoàn tất worklog báo cáo.
 
-
+* Chuyển trọng tâm sang hardening bảo mật, access control và khả năng quan sát hệ thống.
+* Siết chặt các validation liên quan đến loader, license, rate limiting và logging.
