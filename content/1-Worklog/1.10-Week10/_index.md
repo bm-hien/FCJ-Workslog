@@ -1,5 +1,5 @@
 ---
-title: "Week 10: GuardScript — Frontend Completion, Testing & Documentation"
+title: "Week 10: GuardScript - System Integration, Testing, and Backend Stabilization"
 date: 2026-03-23
 weight: 10
 chapter: false
@@ -8,39 +8,32 @@ pre: " <b> 1.10. </b> "
 
 ### 1. Objectives
 
-* **Complete Frontend:** Finalize dashboard and workspace pages with full functionality.
-* **Responsive & Theme:** Ensure all pages work across devices with dark/light theme support.
-* **Testing:** Overall project testing, ensure all features work correctly.
-* **Documentation:** Complete the system architecture diagram and project documentation.
+* Stabilize the backend after the AWS migration stage.
+* Test end-to-end integration between frontend and backend.
+* Further standardize APIs, responses, and deployment configuration to reduce demo-time issues.
 
 ### 2. Weekly Tasks Breakdown
 
 | Day | Main Task | Details | Status |
 |:---:|:---|:---|:---:|
-| **Mon** | **Complete Dashboard & Workspace** | - Finalized dashboard: sidebar, stats cards, workspace grid, quick-action buttons.<br>- Finalized workspace: 3-panel layout, tab bar, file tree component. | Completed |
-| **Tue** | **Theme & Responsive** | - Tested dark/light theme across all pages.<br>- Tested responsive behavior on mobile, tablet, desktop. | Completed |
-| **Wed** | **Overall Testing** | - Tested main flow: register → login → create workspace → use features.<br>- Assisted the team with fixing issues when connecting frontend to backend. | Completed |
-| **Thu** | **Architecture Diagram & Docs** | - Finalizing system architecture diagram for GuardScript.<br>- Updating README and project documentation. | In Progress |
-| **Fri** | **Review & Wrap-up** | - Final UI review, fix remaining minor bugs.<br>- Team meeting to review deliverables, update worklog. | Planned |
+| **Mon** | **Main Flow Testing** | - Verified registration, login, workspace creation, project handling, file operations, and license-related flows.<br>- Recorded issues appearing after migration. | Completed |
+| **Tue** | **Integration API Review** | - Reviewed APIs such as workspace details, project listing, execution summary, and user stats.<br>- Adjusted response structures for frontend compatibility on AWS. | Completed |
+| **Wed** | **Integration Issue Fixing** | - Worked with the team to resolve frontend-backend issues on AWS.<br>- Checked routing, CORS, headers, and returned data shape. | Completed |
+| **Thu** | **Deployment Flow Review** | - Rechecked Lambda Function URL, CloudFront rewrite behavior, S3 frontend hosting, and backend environment variables.<br>- Ensured the deployment flow matched the actual system setup. | Completed |
+| **Fri** | **Technical Documentation Update** | - Supported updates to README and architecture descriptions.<br>- Aligned documentation with the deployed backend state. | Completed |
 
-### 3. Key Results (As of Current Date)
+### 3. Outcomes
 
-#### Frontend:
-* **Dashboard:** Sidebar, stats cards, workspace grid, settings panel, dark/light theme toggle.
-* **Workspace:** 3-panel layout with file explorer, tab bar, project settings, team management.
-* **Responsive:** All pages compatible across mobile, tablet, desktop.
-
-#### Testing:
-* Main flow tested successfully. Assisted with fixing frontend-backend connectivity issues.
-
-#### Infrastructure (Team):
-* AWS services deployed and operational.
+* The backend became more stable after migration at the system integration level.
+* Main APIs serving dashboard and workspace features became more reliable for frontend consumption.
+* The end-to-end deployment and testing flow became clearer ahead of the hardening and documentation phase.
 
 ### 4. Issues & Solutions
-* **Issue:** Some display errors when connecting frontend to API on AWS.
-* **Solution:** Coordinated with the team to fix configuration and ensure compatibility.
+
+* **Issue:** Some issues only appeared in the real AWS environment and were not obvious in the earlier local prototype.
+* **Solution:** Rechecked request/response flow, headers, and rewrite configuration across frontend and backend boundaries.
 
 ### 5. Next Steps
-* Complete architecture diagram and documentation.
-* Prepare project demo.
-* Finalize worklog report.
+
+* Shift focus to security hardening, access control, and system observability.
+* Tighten validation around loaders, licenses, rate limiting, and logging.

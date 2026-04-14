@@ -1,5 +1,5 @@
 ---
-title: "Tuần 5: Tìm hiểu Serverless & Hình thành ý tưởng dự án"
+title: "Tuần 5: Tìm hiểu serverless và hình thành ý tưởng backend cho GuardScript"
 date: 2026-02-02
 weight: 5
 chapter: false
@@ -8,42 +8,32 @@ pre: " <b> 1.5. </b> "
 
 ### 1. Mục tiêu
 
-* **Nắm vững Serverless:** Tìm hiểu chuyên sâu về AWS Lambda, API Gateway và DynamoDB — các thành phần cốt lõi của kiến trúc serverless.
-* **Tiến độ chứng chỉ:** Tiếp tục khóa AWS Fundamentals Specialization trên Coursera.
-* **Ý tưởng dự án:** Brainstorm và đánh giá các ý tưởng dự án với Team TheBois cho project thực tập FCJ.
-* **Tổng kết trước Tết:** Hệ thống lại kiến thức Tuần 1–4 trước kỳ nghỉ Tết Nguyên đán.
+* Nghiên cứu sâu hơn về kiến trúc serverless trên AWS.
+* Đánh giá cách Lambda, API Gateway và DynamoDB có thể ghép thành backend cho sản phẩm thực tế.
+* Brainstorm ý tưởng dự án và xác định hướng bài toán phù hợp với năng lực triển khai của nhóm.
 
 ### 2. Chi tiết công việc trong tuần
 
 | Thứ | Công việc chính | Chi tiết | Trạng thái |
 |:---:|:---|:---|:---:|
-| **Hai** | **Lambda Deep Dive** | - Nghiên cứu mô hình thực thi Lambda, cold start và pricing.<br>- Tìm hiểu Lambda Function URL như endpoint API gọn nhẹ.<br>- Thực hành tạo Lambda function với Node.js runtime. | Hoàn thành |
-| **Ba** | **API Gateway & DynamoDB** | - So sánh API Gateway REST vs HTTP API.<br>- Nghiên cứu sâu DynamoDB: partition key, sort key, GSI, query patterns.<br>- Tìm hiểu chế độ PAY_PER_REQUEST của DynamoDB. | Hoàn thành |
-| **Tư** | **Thực hành Lab** | - Xây dựng serverless REST API đơn giản:<br>&nbsp;+ Lambda function xử lý CRUD.<br>&nbsp;+ DynamoDB table lưu dữ liệu.<br>&nbsp;+ Test qua Lambda Function URL. | Hoàn thành |
-| **Năm** | **Brainstorm Dự án** | - Họp Team TheBois thảo luận hướng dự án.<br>- Đánh giá các ý tưởng: phân phối mã nguồn an toàn, quản lý license, cloud-based code editor.<br>- Hình thành ý tưởng ban đầu cho **GuardScript** — nền tảng phân phối và bảo vệ mã nguồn với hệ thống licensing. | Hoàn thành |
-| **Sáu** | **Tổng kết trước Tết** | - Hệ thống lại ghi chú từ Tuần 1–5.<br>- Tiếp tục AWS Fundamentals Specialization (Coursera).<br>- Chuẩn bị task backlog cho sau Tết.<br>- *Lưu ý: Tuần sau bắt đầu nghỉ Tết (2 tuần).* | Hoàn thành |
+| **Hai** | **Lambda Deep Dive** | - Tìm hiểu mô hình thực thi Lambda, statelessness, cold start và Function URL.<br>- Đánh giá cách Lambda có thể dùng làm nền cho backend. | Hoàn thành |
+| **Ba** | **API Gateway & DynamoDB** | - Nghiên cứu API Gateway và DynamoDB theo hướng query pattern.<br>- Tìm hiểu partition key, GSI và cách thiết kế dữ liệu phục vụ API. | Hoàn thành |
+| **Tư** | **Hands-on Serverless API** | - Xây dựng CRUD API đơn giản theo hướng serverless.<br>- Kiểm chứng khả năng làm backend không cần server truyền thống. | Hoàn thành |
+| **Năm** | **Project Brainstorming** | - Tham gia brainstorming cùng team về secure code distribution, licensing và script management.<br>- Cùng nhóm hình thành ý tưởng ban đầu cho **GuardScript**. | Hoàn thành |
+| **Sáu** | **Pre-Tet Review** | - Tổng hợp lại các điểm kỹ thuật đã học trong tuần 1-5.<br>- Chuẩn bị nền tư duy cho việc chốt scope và thiết kế backend sau Tết. | Hoàn thành |
 
 ### 3. Kết quả đạt được
 
-#### Kỹ thuật:
-* **Kiến thức Serverless:** Hiểu rõ thực tiễn bộ ba Lambda + API Gateway + DynamoDB, tạo nền tảng cho việc triển khai GuardScript lên AWS sau này.
-* **Thực hành:** Xây dựng và test thành công serverless CRUD API, xác minh tính khả thi của kiến trúc backend dựa trên Lambda.
-
-#### Dự án (Team TheBois):
-* **Xác định ý tưởng:** Hình thành ý tưởng cốt lõi cho **GuardScript** — nền tảng phân phối mã nguồn bảo mật, giải quyết vấn đề tái phân phối code trái phép.
-* **Danh sách tính năng ban đầu:** Phân phối script được mã hóa, quản lý license, khóa phần cứng (HWID), cách ly theo workspace, kiểm soát truy cập.
+* Có cơ sở kỹ thuật rõ ràng cho việc chọn hướng serverless cho giai đoạn triển khai sau này.
+* Kiểm chứng được cách triển khai API backend đơn giản bằng Lambda kết hợp DynamoDB.
+* Hình thành ý tưởng sản phẩm GuardScript với các thành phần backend cốt lõi tương đối rõ ràng.
 
 ### 4. Vấn đề & Giải pháp
-* **Vấn đề:** DynamoDB yêu cầu thiết kế partition key và GSI cẩn thận ngay từ đầu, không linh hoạt như SQL.
-* **Giải pháp:** Nghiên cứu Single-Table Design vs Multi-Table Design. Quyết định dùng multi-table với GSI có mục tiêu rõ ràng cho GuardScript.
 
-### 5. Bài học rút ra
-* Kiến trúc serverless đòi hỏi tư duy khác so với thiết kế server truyền thống — statelessness, cold start và pricing pay-per-use đều ảnh hưởng đến quyết định kiến trúc.
-* Thiết kế schema DynamoDB phải hướng theo query, không phải hướng theo entity.
+* **Vấn đề:** DynamoDB yêu cầu tư duy thiết kế khác với mô hình cơ sở dữ liệu quan hệ quen thuộc.
+* **Giải pháp:** Tiếp cận theo query pattern trước, sau đó mới suy ra schema và index cần thiết.
 
-### 6. Bước tiếp theo
-* Nghỉ Tết Nguyên đán (2 tuần).
-* Quay lại với scope dự án GuardScript đã được chốt.
-* Bắt đầu thiết kế kiến trúc và lập kế hoạch phát triển.
+### 5. Bước tiếp theo
 
-
+* Sau kỳ nghỉ Tết sẽ quay lại để chốt phạm vi GuardScript.
+* Bắt đầu thiết kế chi tiết kiến trúc backend, API surface và luồng bảo mật của hệ thống.

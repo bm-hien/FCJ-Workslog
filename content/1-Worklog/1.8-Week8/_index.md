@@ -1,5 +1,5 @@
 ---
-title: "Week 8: GuardScript — Feature Development & Frontend Improvements"
+title: "Week 8: GuardScript - Backend Feature Development and Script Protection Modules"
 date: 2026-03-09
 weight: 8
 chapter: false
@@ -8,32 +8,32 @@ pre: " <b> 1.8. </b> "
 
 ### 1. Objectives
 
-* **Complete Backend (Team):** Team members implement project, file, license, team management APIs and encryption module.
-* **Frontend Improvements:** Fix UI bugs, develop collapsible sidebar, update logo and documentation.
+* Expand the backend into the main GuardScript functional areas.
+* Complete the management flow for project, file, license, team, and access control.
+* Implement script protection modules and prepare for AWS migration.
 
 ### 2. Weekly Tasks Breakdown
 
 | Day | Main Task | Details | Status |
 |:---:|:---|:---|:---:|
-| **Mon** | **Workspace Fix & Merge PR** | - Fixed workspace page layout issues on certain screen sizes.<br>- Merged PR Fix-UI, created project README. | Completed |
-| **Tue – Wed** | **Backend (Team)** | - Team members implemented project, file, license management APIs and encryption module.<br>- Assisted with testing the completed APIs. | Completed |
-| **Thu** | **Sidebar & Logo** | - Tested collapsible sidebar feature across screen sizes.<br>- Fixed sidebar UI, updated logo, fixed dashboard quick-action pointers. | Completed |
-| **Fri** | **Cleanup & Documentation** | - Cleaned up dead code, added repo links to documentation.<br>- Assisted with reviewing and providing feedback on team's APIs. | Completed |
+| **Mon** | **Project and File Flow Development** | - Built APIs for script creation, content updates, file tree organization, and entry point assignment.<br>- Prepared the foundation for bundle generation and protected content flow. | Completed |
+| **Tue** | **License Management Completion** | - Implemented single and batch license creation.<br>- Supported license export, status toggling, HWID lock, and HWID reset flow. | Completed |
+| **Wed** | **Team and Workspace Authorization** | - Built invitation flow and role-based team management inside the workspace.<br>- Standardized member and invitation handling through backend logic. | Completed |
+| **Thu** | **Access Control and Protection Module** | - Implemented access list handling with whitelist and blacklist logic.<br>- Integrated content encryption and prepared loaders for supported languages. | Completed |
+| **Fri** | **Frontend Integration Support** | - Checked API behavior with the workspace screens on the frontend.<br>- Adjusted response data to make integration and display more consistent. | Completed |
 
-### 3. Key Results
+### 3. Outcomes
 
-#### Backend (Team Effort):
-* Project, file, license, and team management APIs completed.
-* Encryption module and script loader system functional.
-
-#### Frontend (Personal Contribution):
-* Fixed workspace layout, collapsible sidebar, new logo, comprehensive README.
-* Merged PR#3 Fix-UI, cleaned up unused imports.
+* The main backend modules of GuardScript were established in a much more complete form.
+* Workspace/project/license data flow became clearer and more integration-ready.
+* Script protection started to move from design into concrete implementation.
 
 ### 4. Issues & Solutions
-* **Issue:** Sidebar displayed incorrectly on certain screen sizes.
-* **Solution:** Tested across multiple viewports and adjusted responsive CSS.
+
+* **Issue:** Backend scope expanded quickly, requiring consistency across permissions, data models, and response formats.
+* **Solution:** Grouped logic by domain and standardized flows before extending more features.
 
 ### 5. Next Steps
-* Begin AWS migration — design serverless architecture.
-* Continue improving overall UI.
+
+* Start migrating GuardScript toward AWS serverless architecture.
+* Shift focus to DynamoDB data organization, S3-based storage, and Lambda deployment.

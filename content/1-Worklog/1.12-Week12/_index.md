@@ -1,57 +1,39 @@
 ---
-title: "Week 12 Worklog"
+title: "Week 12: GuardScript - Finalizing Technical Documentation, Testing, and Demo Preparation"
 date: 2026-03-27
 weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+### 1. Objectives
 
-### Week 12 Objectives:
+* Standardize documentation so it matches the actual implementation state of the GuardScript backend.
+* Recheck deployment flow, monitoring baseline, and testing checklist before the demo.
+* Finalize the main technical points for reporting and presentation.
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### 2. Weekly Tasks Breakdown
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Main Task | Technical Details | Status |
+|:---:|:---|:---|:---:|
+| **Mon** | **Documentation-to-Code Alignment** | - Cross-checked proposal and worklog content against the current source code and infrastructure.<br>- Removed claims that were not clearly supported by implementation evidence. | Completed |
+| **Tue** | **Technical Module Summary** | - Summarized the auth, workspace, project/file, loader, license, access, realtime, and admin modules.<br>- Prepared concise technical descriptions for reporting and demo use. | Completed |
+| **Wed** | **Deployment Workflow Review** | - Rechecked the SAM/CloudFormation flow.<br>- Reviewed frontend sync to S3 and CloudFront invalidation in the end-to-end deployment process. | Completed |
+| **Thu** | **Monitoring Baseline Review** | - Checked CloudWatch log retention, dashboard, and Lambda alarms.<br>- Standardized how operations and monitoring would be described in documentation. | Completed |
+| **Fri** | **Demo Checklist Preparation** | - Prepared testing and validation checklists.<br>- Added cleanup and cost-awareness items for the demo phase. | Completed |
 
+### 3. Outcomes
 
-### Week 12 Achievements:
+* Technical documentation and worklog content became much closer to the actual backend implementation.
+* Deployment and operational flow could be explained more clearly for reporting and demonstration.
+* A practical checklist was prepared to support final testing and demo preparation.
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### 4. Issues & Solutions
 
-* Successfully created and configured an AWS Free Tier account.
+* **Issue:** Some older documentation described a broader scope than what had actually been implemented.
+* **Solution:** Kept only claims that could be verified through source code, infrastructure configuration, and the current API surface.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+### 5. Next Steps
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Finalize the demo presentation around architecture, implementation, and validation.
+* Continue polishing minor details discovered during rehearsal or final review.

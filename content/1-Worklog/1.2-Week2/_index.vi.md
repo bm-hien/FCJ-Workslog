@@ -1,5 +1,5 @@
 ---
-title: "Tuần 2: Lưu trữ, Cơ sở dữ liệu & Khởi động Dự án"
+title: "Tuần 2: Lưu trữ, cơ sở dữ liệu và định hướng kiến trúc hệ thống"
 date: 2026-01-12
 weight: 2
 chapter: false
@@ -8,36 +8,32 @@ pre: " <b> 1.2. </b> "
 
 ### 1. Mục tiêu
 
-* **Kỹ thuật cốt lõi:** Tìm hiểu sâu về các dịch vụ Lưu trữ (S3, EBS) và Cơ sở dữ liệu (RDS) của AWS; thực hành xây dựng hệ thống upload file.
-* **Khởi động dự án:** Hoàn thiện đề xuất cho dự án **"Website Security Baseline Assessment Platform"** – công cụ hỗ trợ đánh giá nhanh rủi ro bảo mật.
-* **Nâng cao kỹ năng:** Củng cố kiến thức NLP thông qua các chứng chỉ Coursera để phục vụ cho khía cạnh AI của dự án thực tập.
+* Tìm hiểu sâu hơn về các dịch vụ lưu trữ và cơ sở dữ liệu của AWS.
+* Thực hành bài toán upload file để hiểu luồng backend kết nối với object storage.
+* Tham gia giai đoạn khởi động dự án và thảo luận định hướng kiến trúc hệ thống.
 
 ### 2. Chi tiết công việc trong tuần
 
 | Thứ | Công việc chính | Chi tiết | Trạng thái |
 |:---:|:---|:---|:---:|
-| **Hai** | **Lưu trữ & CSDL** | - Nghiên cứu **S3** (Buckets, lifecycle policies).<br>- Nghiên cứu **EBS** (Volumes, snapshots) & **RDS** (Cài đặt, quản lý).<br>- *Nguồn: Chương trình học Tuần 2*. | Hoàn thành |
-| **Ba** | **Thực hành Lab** | - **Xây dựng hệ thống upload file:**<br>&nbsp;+ Cấu hình S3 bucket để lưu trữ.<br>&nbsp;+ Kết nối backend với S3 để xử lý file. | Hoàn thành |
-| **Tư** | **Đề xuất dự án** | - **Soạn thảo Proposal:** Xác định phạm vi cho "Website Security Baseline Assessment Platform".<br>- **Chốt tính năng:**<br>&nbsp;+ Kiểm tra cơ bản: HTTPS/SSL, Robots.txt.<br>&nbsp;+ Quét lỗ hổng: SQL Injection, XSS, File Uploads.<br>- **Kiến trúc:** Thiết kế core độc lập (chạy Local/VPS/AWS) không phụ thuộc cứng vào hạ tầng cloud.<br>- [Link tới File Proposal](https://docs.google.com/document/d/1oSdWCVFiCKTUP9ol8eZyOwYg9J5DhtE1/edit?usp=sharing&ouid=101583017547639870148&rtpof=true&sd=true) | Hoàn thành |
-| **Năm** | **Chứng chỉ AI/NLP** | - Hoàn thành 2 khóa học DeepLearning.AI trên Coursera:<br>&nbsp;1. NLP with Attention Models.<br>&nbsp;2. NLP with Classification and Vector Spaces.<br>- [Cert 1](https://www.coursera.org/account/accomplishments/verify/177J1KWEAWPH) · [Cert 2](https://www.coursera.org/account/accomplishments/verify/JCCLTKPCI1CV) | Hoàn thành |
-| **Sáu** | **AWS Specialization** | - Tìm kiếm và lên kế hoạch học "AWS Fundamentals Specialization".<br>- Review tuần và họp nhóm rút kinh nghiệm.<br>- [AWS Fundamentals Specialization](https://www.coursera.org/programs/fptu-spring-2026-6010y/specializations/aws-fundamentals?source=search) | Đang thực hiện |
+| **Hai** | **Storage & Database Study** | - Nghiên cứu S3, EBS và RDS với góc nhìn backend.<br>- Tập trung vào cách lưu trữ dữ liệu, snapshot và khả năng mở rộng. | Hoàn thành |
+| **Ba** | **Hands-on Upload Flow** | - Thực hành xây dựng luồng upload file với S3.<br>- Tìm hiểu cách backend tiếp nhận, xử lý và lưu trữ nội dung trên cloud. | Hoàn thành |
+| **Tư** | **Architecture Discussion** | - Tham gia thảo luận proposal giai đoạn đầu.<br>- Đánh giá hướng tổ chức dữ liệu và khả năng tách core logic khỏi hạ tầng triển khai. | Hoàn thành |
+| **Năm** | **Portability Review** | - Đánh giá cách thiết kế để hệ thống có thể vận hành ở local và cloud.<br>- Hạn chế phụ thuộc cứng vào một nền tảng duy nhất. | Hoàn thành |
+| **Sáu** | **Weekly Review** | - Tổng hợp lại kiến thức về storage và database.<br>- Rút ra các điểm cần lưu ý cho những bài toán backend có xử lý file. | Hoàn thành |
 
 ### 3. Kết quả đạt được
 
-#### Kỹ thuật & Thực hành:
-* **Thành thạo Lưu trữ:** Đã hiểu và quản lý được S3 Lifecycles và EBS Snapshots.
-* **Triển khai thực tế:** Xây dựng thành công **Hệ thống Upload File** sử dụng AWS S3, đảm bảo dữ liệu được lưu trữ bền vững.
-
-#### Dự án (Team TheBois):
-* **Hoàn thiện Proposal:** Đã xong đề xuất cho **Website Security Baseline Assessment Platform**.
-* **Xác định phạm vi:** Thống nhất tập trung vào "Đánh giá nền tảng" (tiền kiểm thử/pre-pentest) để nhận diện rủi ro phổ biến như Injection, Phân quyền (Access Control), và Cấu hình sai (Security Misconfiguration).
-* **Chiến lược kiến trúc:** Quyết định kiến trúc linh hoạt: AWS dùng để lưu trữ báo cáo/log, nhưng core logic quét lỗi hoạt động độc lập (Portable).
-
-#### Chứng chỉ & Học tập:
-* **Hoàn thành Coursera:** Đạt 2 chứng chỉ từ DeepLearning.AI (hoàn thành ngày 15/01/2026):
-    * *Natural Language Processing with Attention Models*
-    * *Natural Language Processing with Classification and Vector Spaces*
+* Nắm rõ hơn vai trò của object storage trong các bài toán backend có xử lý file.
+* Có trải nghiệm thực tế về cách backend kết nối với S3 và tổ chức luồng upload.
+* Bắt đầu hình thành tư duy kiến trúc theo hướng tách lớp xử lý nghiệp vụ khỏi lớp hạ tầng.
 
 ### 4. Vấn đề & Giải pháp
-* **Vấn đề:** Khó khăn trong việc xác định phạm vi pháp lý khi quét các website bên ngoài.
-* **Giải pháp:** Đã làm rõ trong proposal - Tuân thủ nguyên tắc "Chỉ thực hiện khi có sự đồng ý bằng văn bản".
+
+* **Vấn đề:** Việc xác định phạm vi dự án ở giai đoạn đầu còn rộng và nhiều khả năng mở rộng.
+* **Giải pháp:** Ưu tiên phân tích các thành phần backend cốt lõi trước để giữ kiến trúc đủ linh hoạt cho thay đổi sau này.
+
+### 5. Bước tiếp theo
+
+* Tiếp tục củng cố kiến thức về networking và security trên AWS.
+* Chuẩn bị nền tảng cho việc thiết kế backend an toàn hơn trong các giai đoạn tiếp theo.

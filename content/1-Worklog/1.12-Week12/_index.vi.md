@@ -1,58 +1,39 @@
 ---
-title: "Worklog Tuần 12"
+title: "Tuần 12: GuardScript - Hoàn thiện tài liệu kỹ thuật, kiểm thử và chuẩn bị demo"
 date: 2026-03-27
 weight: 12
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1.12. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
-### Mục tiêu tuần 12:
+### 1. Mục tiêu
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Chuẩn hóa tài liệu để phản ánh đúng trạng thái triển khai thực tế của backend GuardScript.
+* Rà lại quy trình deploy, monitoring và checklist kiểm thử trước demo.
+* Chốt các nội dung kỹ thuật quan trọng cho giai đoạn báo cáo và trình bày.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### 2. Chi tiết công việc trong tuần
 
+| Thứ | Công việc chính | Chi tiết kỹ thuật | Trạng thái |
+|:---:|:---|:---|:---:|
+| **Hai** | **Đối chiếu tài liệu với code** | - So khớp proposal/worklog với source code và hạ tầng hiện có.<br>- Loại bỏ các claim chưa có bằng chứng triển khai rõ ràng. | Hoàn thành |
+| **Ba** | **Tổng hợp module kỹ thuật** | - Hệ thống lại các module auth, workspace, project/file, loader, license, access, realtime và admin.<br>- Chuẩn bị nội dung mô tả ngắn gọn cho báo cáo/demo. | Hoàn thành |
+| **Tư** | **Rà workflow triển khai** | - Kiểm tra lại flow SAM/CloudFormation.<br>- Rà sync frontend lên S3 và CloudFront invalidation trong quy trình end-to-end. | Hoàn thành |
+| **Năm** | **Rà monitoring baseline** | - Kiểm tra CloudWatch log retention, dashboard và alarms cho Lambda.<br>- Chuẩn hóa cách mô tả vận hành và monitoring trong tài liệu. | Hoàn thành |
+| **Sáu** | **Chuẩn bị checklist demo** | - Chuẩn bị checklist kiểm thử và validation flow.<br>- Bổ sung các mục cleanup/cost-awareness cho giai đoạn demo. | Hoàn thành |
 
-### Kết quả đạt được tuần 12:
+### 3. Kết quả đạt được
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Tài liệu kỹ thuật và worklog đã bám sát implementation backend hiện có.
+* Quy trình triển khai và vận hành có thể mô tả rõ ràng hơn trong báo cáo/demonstration.
+* Có bộ checklist đủ dùng để hỗ trợ kiểm thử cuối kỳ và chuẩn bị demo dự án.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+### 4. Vấn đề & Giải pháp
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* **Vấn đề:** Một số nội dung tài liệu cũ mô tả rộng hơn phạm vi đã triển khai thực tế.
+* **Giải pháp:** Chỉ giữ các claim có thể đối chiếu được từ source code, cấu hình hạ tầng và API hiện có.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+### 5. Bước tiếp theo
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Hoàn thiện phần trình bày demo xoay quanh kiến trúc, implementation và validation.
+* Tiếp tục tinh chỉnh các điểm nhỏ nếu phát hiện trong quá trình rehearsal hoặc review cuối.

@@ -1,5 +1,5 @@
 ---
-title: "Tuần 1: Giới thiệu & Thiết lập môi trường làm việc"
+title: "Tuần 1: Làm quen với AWS và thiết lập môi trường kỹ thuật"
 date: 2026-01-05
 weight: 1
 chapter: false
@@ -8,35 +8,32 @@ pre: " <b> 1.1. </b> "
 
 ### 1. Mục tiêu
 
-* **Hòa nhập:** Kết nối với các thành viên FCJ, nắm bắt văn hóa và quy định.
-* **Kỹ thuật:** Thiết lập môi trường AWS (Account, CLI) và hoàn thành chuỗi bài thực hành cơ bản (Explore AWS).
-* **Quản lý (Team Lead):** Thiết lập hạ tầng làm việc và phân chia vai trò cho team **TheBois**.
+* Làm quen với môi trường thực tập, quy trình làm việc nhóm và hạ tầng AWS cơ bản.
+* Thiết lập môi trường kỹ thuật phục vụ phát triển backend.
+* Hoàn thành các bài thực hành khởi động để nắm cách sử dụng các dịch vụ cloud nền tảng.
 
 ### 2. Chi tiết công việc trong tuần
 
 | Thứ | Công việc chính | Chi tiết | Trạng thái |
 |:---:|:---|:---|:---:|
-| **Hai** | **Onboarding** | - Làm quen với các thành viên FCJ.<br>- Đọc và nghiên cứu nội quy, quy trình làm việc tại đơn vị thực tập. | Hoàn thành |
-| **Ba** | **AWS Overview** | - Tìm hiểu kiến thức nền tảng về các nhóm dịch vụ:<br>&nbsp;+ Compute (EC2, Lambda)<br>&nbsp;+ Storage (S3, EBS)<br>&nbsp;+ Database (RDS, DynamoDB)<br>&nbsp;+ Networking (VPC) | Hoàn thành |
-| **Tư** | **Setup Environment** | - Tạo tài khoản AWS Free Tier.<br>- Cài đặt và cấu hình **AWS CLI** trên máy local.<br>- Kết nối terminal với tài khoản AWS qua Access Key/Secret Key. | Hoàn thành |
-| **Năm** | **Explore AWS Labs** | - Thực hành hoàn thành **5/5 activities** trong mục Explore AWS để nhận Credits:<br>&nbsp;1. Tạo Database (Aurora/RDS)<br>&nbsp;2. Tạo Web App với AWS Lambda<br>&nbsp;3. Setup ngân sách với AWS Budgets<br>&nbsp;4. Sử dụng Foundation Model trên **Amazon Bedrock**<br>&nbsp;5. Khởi tạo EC2 Instance cơ bản | Hoàn thành |
-| **Sáu** | **Team Management** | - **Setup Communication:** Tạo server Discord, thiết lập các channel thảo luận.<br>- **Setup Source Control:** Khởi tạo GitHub Organization/Repo cho team TheBois.<br>- **Role Division:** Họp team, phân chia vai trò cụ thể (AI, IA, Cyber, Backend) cho từng thành viên. | Hoàn thành |
+| **Hai** | **Onboarding** | - Tham gia onboarding và nắm quy trình phối hợp trong chương trình FCJ.<br>- Tìm hiểu cách làm việc của team TheBois và định hướng vai trò backend. | Hoàn thành |
+| **Ba** | **AWS Overview** | - Tìm hiểu các nhóm dịch vụ nền tảng gồm Compute, Storage, Database và Networking.<br>- Xây nền kiến thức cho việc thiết kế hệ thống backend về sau. | Hoàn thành |
+| **Tư** | **Setup Environment** | - Tạo tài khoản AWS.<br>- Cài đặt và cấu hình AWS CLI trên máy cá nhân.<br>- Chuẩn bị môi trường local để làm việc với AWS. | Hoàn thành |
+| **Năm** | **Explore AWS Labs** | - Hoàn thành các bài thực hành khởi động để làm quen với Lambda, database managed service, EC2 và quản lý chi phí.<br>- Ghi nhận các thao tác cơ bản phục vụ học tập và phát triển sau này. | Hoàn thành |
+| **Sáu** | **Role Alignment** | - Tham gia trao đổi phân vai trong nhóm.<br>- Làm rõ định hướng phụ trách backend cho các giai đoạn tiếp theo của dự án. | Hoàn thành |
 
 ### 3. Kết quả đạt được
 
-#### Kỹ thuật:
-* **Môi trường:** Đã cấu hình xong AWS CLI, đảm bảo việc tương tác với AWS thông suốt từ máy cá nhân.
-* **Thực hành:** Hoàn thành xuất sắc **100% (5/5)** các bài lab khởi động của AWS:
-    * Đã trải nghiệm deploy mô hình AI trên **Amazon Bedrock**.
-    * Đã deploy thành công serverless app với **Lambda**.
-    * Đã khởi tạo database và máy ảo EC2.
-    * Đã thiết lập cảnh báo chi phí (Budget) để quản lý tài nguyên.
-
-#### Quản lý (Team TheBois):
-* **Hạ tầng làm việc:** Đã có không gian làm việc chung trên Discord.
-    * Đã có GitHub Repo để quản lý source code dự án sắp tới.
-* **Nhân sự:** Các thành viên (Bình, Trí, Hiển, Tùng, Vinh) đã nắm rõ role và nhiệm vụ của mình.
+* Hoàn tất môi trường kỹ thuật ban đầu để có thể làm việc với AWS từ local.
+* Có cái nhìn tổng quan về các dịch vụ sẽ liên quan trực tiếp đến backend như Lambda, S3, RDS/DynamoDB và IAM.
+* Sẵn sàng cho các tuần tiếp theo về lưu trữ dữ liệu, API và kiến trúc hệ thống.
 
 ### 4. Vấn đề & Giải pháp
-* **Vấn đề:** Việc setup IAM User ban đầu gặp chút khó khăn về quyền hạn.
-* **Giải pháp:** Đã đọc tài liệu AWS IAM Best Practices và cấu hình lại Policy phù hợp.
+
+* **Vấn đề:** Ban đầu gặp vướng mắc khi cấu hình quyền truy cập AWS cho môi trường local.
+* **Giải pháp:** Rà lại IAM best practices và chuẩn hóa cách dùng access key trong quá trình thiết lập.
+
+### 5. Bước tiếp theo
+
+* Tìm hiểu sâu hơn về lưu trữ và cơ sở dữ liệu trên AWS.
+* Bắt đầu định hình cách tổ chức dữ liệu và xử lý file cho các bài toán backend.
